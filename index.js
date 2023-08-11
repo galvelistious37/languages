@@ -27,7 +27,6 @@ function setDictionary(){
 }
 
 function getNext(){
-    index++;
     displayPhrase();
     setDefinition();
 }
@@ -40,6 +39,10 @@ function setDefinition(){
     let selector = document.querySelector("h3");
     selector.classList.add("hide");
     selector.innerHTML = dictionary.get(phrase[index]);
+}
+
+function isMore(){
+    return index < phrase.length - 1;
 }
 
 setPhraseArr();
@@ -57,5 +60,10 @@ document.querySelector("#definition").addEventListener("click", function(){
 })
 
 document.querySelector("#next").addEventListener("click", function(){
+    if(!isMore()){
+        index = 0;
+    } else {
+        index++;
+    }
     getNext();
 })
