@@ -20,7 +20,7 @@ function setPhraseArr(){
     }
 }
 
-function getNext(){
+function setCardValues(){
     displayPhrase();
     setDefinition();
 }
@@ -38,15 +38,10 @@ function isMore(){
     return index < phrase.length - 1;
 }
 
+let index = 0;
 setDictionary();
 setPhraseArr();
-
-let index = 0;
-
-document.querySelector("#start").addEventListener("click", function(){
-    displayPhrase();
-    setDefinition();
-})
+setCardValues();
 
 document.querySelector("#definition").addEventListener("click", function(){
     $("h3").removeClass("hide");
@@ -58,5 +53,14 @@ document.querySelector("#next").addEventListener("click", function(){
     } else {
         index++;
     }
-    getNext();
+    setCardValues();
+})
+
+document.querySelector("#previous").addEventListener("click", function(){
+    if(index == 0){
+        index = (phrase.length - 1);
+    } else {
+        index--;
+    }
+    setCardValues();
 })
