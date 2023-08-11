@@ -2,18 +2,6 @@ let phrase = [];
 let dictionary = new Map();
 let keepGoing = true;
 
-function setPhraseArr(){
-    phrase.push("Pagbati");
-    phrase.push("Mabuhay!");
-    phrase.push("Kumusta?");
-    phrase.push("Ayos lang. Ikaw?");
-    phrase.push("Ako si [pangalan].");
-    phrase.push("Ako naman si [pangalan]");
-    phrase.push("Ang pangalan ko ay [pangalan].");
-    phrase.push("Anong pangalan mo?");
-    phrase.push("Ikinagagalak [rin] kitang makilala.");
-}
-
 function setDictionary(){
     dictionary.set("Pagbati", "Greetings");
     dictionary.set("Mabuhay!", "Welcome!");
@@ -24,6 +12,12 @@ function setDictionary(){
     dictionary.set("Ang pangalan ko ay [pangalan].", "My name is [name].");
     dictionary.set("Anong pangalan mo?", "What is your name?");
     dictionary.set("Ikinagagalak [rin] kitang makilala.", "Nice to meet you [too].");
+}
+
+function setPhraseArr(){
+    for(let key of dictionary.keys()){
+        phrase.push(key);
+    }
 }
 
 function getNext(){
@@ -45,8 +39,8 @@ function isMore(){
     return index < phrase.length - 1;
 }
 
-setPhraseArr();
 setDictionary();
+setPhraseArr();
 
 let index = 0;
 
