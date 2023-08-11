@@ -26,13 +26,12 @@ function getNext(){
 }
 
 function displayPhrase(){
-    document.querySelector("h2").innerHTML = phrase[index];
+    $("h2").text(phrase[index]);
 }
 
 function setDefinition(){
-    let selector = document.querySelector("h3");
-    selector.classList.add("hide");
-    selector.innerHTML = dictionary.get(phrase[index]);
+    $("h3").addClass("hide");
+    $("h3").text(dictionary.get(phrase[index]));
 }
 
 function isMore(){
@@ -50,7 +49,7 @@ document.querySelector("#start").addEventListener("click", function(){
 })
 
 document.querySelector("#definition").addEventListener("click", function(){
-    document.querySelector("h3").classList.remove("hide");
+    $("h3").removeClass("hide");
 })
 
 document.querySelector("#next").addEventListener("click", function(){
