@@ -5,5 +5,5 @@ document.querySelector("#spanish-lang").addEventListener("click", function(){
 })
 
 document.querySelector("#tagalog-lang").addEventListener("click", function(){
-    window.location = "../tagalog/html/modules.html";
+    window.location = "../../tagalog/html/modules.html";
 })
