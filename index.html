@@ -10,37 +10,20 @@
     <div class="header">
         <h1>Welcome to Johnny's Famous Flashcard Festivities!</h1>
     </div>
-        <div id="container-display" class="no-display">
-            <div>
-                <h2 id="mod-title"></h2>
-            </div>
-            <div class="container">
-                <div class="btn-div">
-                    <button id="previous" class="btn">Previous</button>
-                    <button id="definition" class="btn">Get Definition</button>
-                    <button id="next" class="btn">Next</button>
-                </div>
-            </div>
-            <div class="container-cards">
-                <div id="tagalog">
-                    <p>Tagalog:</p>
-                    <h2 id="phrase"></h2>
-                </div>
-                <div id="english">
-                    <p>English:</p>
-                    <h2 id="def"></h2>
-                </div>
+    <div id="language-display">
+        <div id="choose-language-div" class="container">
+            <h2>Which Language Would You Like to Learn?</h2>
+        </div>
+        <div class="container">
+            <div class="container btn-div center-just">
+                <button id="tagalog-lang" class="btn">Tagalog</button>
+                <button id="spanish-lang" class="btn">Spanish</button>
             </div>
         </div>
-    <div id="choose">
-        <h2>Choose a module and begin:</h2>
     </div>
-    <div class="container container-modules">
-        <button id="greetings" class="btn">greetings</button>
-    </div>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="./tagalog/js/greetings/greeting.js"></script>
-    <script src="./tagalog/js/index/index.js"></script>
+    <script src="./tagalog/js/index.js"></script>
 </body>
 </html>

@@ -59,4 +59,9 @@ document.querySelector("#greetings").addEventListener("click", function(){
     setModuleTitle();
     setCardValues();
     $("#container-display").removeClass("no-display");
+    $("#choose-mod-div").html("<h3 id='choose-mod'>Modules:</h3>");
+})
+
+document.querySelector("#home").addEventListener("click", function(){
+    window.location = "../../index.html";
 })

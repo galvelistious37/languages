@@ -13,13 +13,21 @@
 
 .header {
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
 }
 
-#choose {
+#choose-language-div {
+    margin-top: 200px;
+}
+
+#choose-mod-div {
     text-align: center;
     margin: 30px auto;
+}
+
+#back-home-div {
+    text-align: center;
 }
 
 .container, .container-cards {
@@ -28,6 +36,12 @@
     margin: 20px auto;
     display: flex;
     justify-content: space-evenly;
+}
+
+.center-just {
+    width: 50%;
+    margin: auto;
+    justify-content: space-around;
 }
 
 #tagalog, #english {

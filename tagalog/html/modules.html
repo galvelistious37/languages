@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - Modules</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Johnny's Famous Flashcard Festivities!</h1>
+    </div>
+    <div id="container-display" class="no-display">
+        <div class="container">
+            <h2 id="mod-title"></h2>
+        </div>
+        <div class="container">
+            <div class="btn-div">
+                <button id="previous" class="btn">Previous</button>
+                <button id="definition" class="btn">Get Definition</button>
+                <button id="next" class="btn">Next</button>
+            </div>
+        </div>
+        <div class="container-cards">
+            <div id="tagalog">
+                <p>Tagalog:</p>
+                <h2 id="phrase"></h2>
+            </div>
+            <div id="english">
+                <p>English:</p>
+                <h2 id="def"></h2>
+            </div>
+        </div>
+    </div>
+    <div id="choose-mod-div">
+        <h2 id="choose-mod">Choose a module and begin:</h2>
+    </div>
+    <div class="container container-modules">
+        <button id="greetings" class="btn">greetings</button>
+    </div>
+
+    <div id="back-home-div">
+        <h2 id="back-home">Home:</h2>
+    </div>
+    <div class="container container-modules">
+        <button id="home" class="btn">Home</button>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="../js/greeting-dictionary.js"></script>
+    <script src="../js/greetings.js"></script>
+</body>
+</html>
