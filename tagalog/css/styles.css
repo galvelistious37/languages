@@ -7,10 +7,19 @@
     visibility: hidden;
 }
 
+.no-display {
+    display: none;
+}
+
 .header {
     width: 90%;
     margin: 0 auto;
     text-align: center;
+}
+
+#choose {
+    text-align: center;
+    margin: 30px auto;
 }
 
 .container, .container-cards {

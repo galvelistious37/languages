@@ -8,24 +8,35 @@
 </head>
 <body>
     <div class="header">
-        <h1>Hello, Welcome to Johnny's Famous Flashcard Festivities!</h1>
+        <h1>Welcome to Johnny's Famous Flashcard Festivities!</h1>
     </div>
-    <div class="container no-border">
-        <div class="btn-div">
-            <button id="previous" class="btn">Previous</button>
-            <button id="definition" class="btn">Get Definition</button>
-            <button id="next" class="btn">Next</button>
+        <div id="container-display" class="no-display">
+            <div>
+                <h2 id="mod-title"></h2>
+            </div>
+            <div class="container">
+                <div class="btn-div">
+                    <button id="previous" class="btn">Previous</button>
+                    <button id="definition" class="btn">Get Definition</button>
+                    <button id="next" class="btn">Next</button>
+                </div>
+            </div>
+            <div class="container-cards">
+                <div id="tagalog">
+                    <p>Tagalog:</p>
+                    <h2 id="phrase"></h2>
+                </div>
+                <div id="english">
+                    <p>English:</p>
+                    <h2 id="def"></h2>
+                </div>
+            </div>
         </div>
+    <div id="choose">
+        <h2>Choose a module and begin:</h2>
     </div>
-    <div class="container-cards">
-        <div id="tagalog">
-            <p>Tagalog:</p>
-            <h2 id="phrase"></h2>
-        </div>
-        <div id="english">
-            <p>English:</p>
-            <h2 id="def"></h2>
-        </div>
+    <div class="container container-modules">
+        <button id="greetings" class="btn">greetings</button>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>

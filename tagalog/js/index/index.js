@@ -1,13 +1,8 @@
-
-let dictionary = getTagalogGreetings();
-let phrase = [];
-
-
-
 function setPhraseArr(){
     for(let key of dictionary.keys()){
         phrase.push(key);
     }
+     return phrase;
 }
 
 function setCardValues(){
@@ -28,9 +23,13 @@ function isMore(){
     return index < phrase.length - 1;
 }
 
+function setModuleTitle(){
+    $("#mod-title").text(getTitleGreetings())
+}
+
+let dictionary;
+let phrase = [];
 let index = 0;
-setPhraseArr();
-setCardValues();
 
 document.querySelector("#definition").addEventListener("click", function(){
     $("#def").removeClass("hide");
@@ -52,4 +51,12 @@ document.querySelector("#previous").addEventListener("click", function(){
         index--;
     }
     setCardValues();
+})
+
+document.querySelector("#greetings").addEventListener("click", function(){
+    dictionary = getTagalogGreetings();
+    phrase = setPhraseArr();
+    setModuleTitle();
+    setCardValues();
+    $("#container-display").removeClass("no-display");
 })
