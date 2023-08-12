@@ -76,6 +76,7 @@ p {
     height: 25px;
     border-radius: 10%;
     border: 1px solid gray;
+    margin: auto 30px;
 }
 
 .btn:hover {
@@ -95,5 +96,9 @@ p {
         border: 1px solid black;
         width: 100%;
         margin: 10px 0;
+    }
+
+    .btn {
+        margin: 0;
     }
 }
