@@ -1,23 +1,8 @@
-let phrase = [];
-let dictionary = new Map();
-let keepGoing = true;
-
-function setDictionary(){
-    dictionary.set("Pagbati", "Greetings");
-    dictionary.set("Mabuhay!", "Welcome!");
-    dictionary.set("Kumusta?", "Hi/Hello/How are you?");
-    dictionary.set("Ayos lang. Ikaw?", "I'm doing fine. How about you?");
-    dictionary.set("Ako si [pangalan].", "I am [name].");
-    dictionary.set("Ako (naman) si [pangalan]", "I am (also/likewise/as well) [name]");
-    dictionary.set("Ang pangalan ko ay [pangalan].", "My name is [name].");
-    dictionary.set("Anong pangalan mo?", "What is your name?");
-    dictionary.set("Ikinagagalak [rin] kitang makilala.", "Nice to meet you [too].");
-}
-
 function setPhraseArr(){
     for(let key of dictionary.keys()){
         phrase.push(key);
     }
+     return phrase;
 }
 
 function setCardValues(){
@@ -38,10 +23,13 @@ function isMore(){
     return index < phrase.length - 1;
 }
 
+function setModuleTitle(){
+    $("#mod-title").text(getTitleGreetings())
+}
+
+let dictionary;
+let phrase = [];
 let index = 0;
-setDictionary();
-setPhraseArr();
-setCardValues();
 
 document.querySelector("#definition").addEventListener("click", function(){
     $("#def").removeClass("hide");
@@ -63,4 +51,17 @@ document.querySelector("#previous").addEventListener("click", function(){
         index--;
     }
     setCardValues();
+})
+
+document.querySelector("#greetings").addEventListener("click", function(){
+    dictionary = getTagalogGreetings();
+    phrase = setPhraseArr();
+    setModuleTitle();
+    setCardValues();
+    $("#container-display").removeClass("no-display");
+    $("#choose-mod-div").html("<h3 id='choose-mod'>Modules:</h3>");
+})
+
+document.querySelector("#home").addEventListener("click", function(){
+    window.location = "../../index.html";
 })

@@ -4,31 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./tagalog/css/styles.css" />
 </head>
 <body>
     <div class="header">
-        <h1>Hello, Welcome to Johnny's Famous Flashcard Festivities!</h1>
+        <h1>Welcome to Johnny's Famous Flashcard Festivities!</h1>
     </div>
-    <div class="container no-border">
-        <div class="btn-div">
-            <button id="previous" class="btn">Previous</button>
-            <button id="definition" class="btn">Get Definition</button>
-            <button id="next" class="btn">Next</button>
+    <div id="language-display">
+        <div id="choose-language-div" class="container">
+            <h2>Which Language Would You Like to Learn?</h2>
+        </div>
+        <div class="container">
+            <div class="container btn-div center-just">
+                <button id="tagalog-lang" class="btn">Tagalog</button>
+                <button id="spanish-lang" class="btn">Spanish</button>
+            </div>
         </div>
     </div>
-    <div class="container-cards">
-        <div id="tagalog">
-            <p>Tagalog:</p>
-            <h2 id="phrase"></h2>
-        </div>
-        <div id="english">
-            <p>English:</p>
-            <h2 id="def"></h2>
-        </div>
-    </div>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="./tagalog/js/index.js"></script>
 </body>
 </html>
