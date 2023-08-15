@@ -6,16 +6,18 @@ function setPhraseArr(){
 }
 
 function setCardValues(){
-    displayPhrase();
-    setDefinition();
+    $("#phrase").animate({opacity: 0});
+    $("#def").animate({opacity: 0}, function(){
+        displayPhrase();
+        setDefinition();
+    });
 }
 
 function displayPhrase(){
-    $("#phrase").text(phrase[index]);
+    $("#phrase").animate({opacity: 1}).text(phrase[index]);
 }
 
 function setDefinition(){
-    $("#def").addClass("hide");
     $("#def").text(dictionary.get(phrase[index]));
 }
 
@@ -33,15 +35,19 @@ function reset(arr){
     index = 0;
 }
 
+function doTheSlides(selector){
+    $(selector).hide().slideDown();
+}
+
 let dictionary = new Map();
 let phrase = [];
 let index = 0;
 
-document.querySelector("#definition").addEventListener("click", function(){
-    $("#def").removeClass("hide");
+$("#definition").on("click", function(){
+    $("#def").animate({opacity: 1})
 })
 
-document.querySelector("#next").addEventListener("click", function(){
+$("#next").on("click", function(){
     if(!isMore()){
         index = 0;
     } else {
@@ -50,7 +56,7 @@ document.querySelector("#next").addEventListener("click", function(){
     setCardValues();
 })
 
-document.querySelector("#previous").addEventListener("click", function(){
+$("#previous").on("click", function(){
     if(index == 0){
         index = (phrase.length - 1);
     } else {
@@ -59,26 +65,37 @@ document.querySelector("#previous").addEventListener("click", function(){
     setCardValues();
 })
 
-document.querySelector("#greetings").addEventListener("click", function(){
-    reset();
-    dictionary = getTagalogGreetings();
-    phrase = setPhraseArr();
-    setModuleTitle(getTitleGreetings());
-    setCardValues();
-    $("#container-display").removeClass("no-display");
-    $("#choose-mod-div").html("<h3 id='choose-mod'>Modules:</h3>");
+$("#greetings").on("click", function(){
+    $("#phrase").animate({opacity: 0});
+    $("#container-display").slideUp(500, function(){
+        reset();
+        dictionary = getTagalogGreetings();
+        phrase = setPhraseArr();
+        setModuleTitle(getTitleGreetings());
+        setCardValues();
+        $("#choose-mod-div").html("<h3 id='choose-mod'>Modules:</h3>");
+    });
+    $("#container-display").slideDown(500);
 })
 
-document.querySelector("#manners").addEventListener("click", function(){
-    reset();
-    dictionary = getTagalogManners();
-    phrase = setPhraseArr();
-    setModuleTitle(getTitleManners());
-    setCardValues();
-    $("#container-display").removeClass("no-display");
-    $("#choose-mod-div").html("<h3 id='choose-mod'>Modules:</h3>");
+$("#manners").on("click", function(){
+    $("#phrase").animate({opacity: 0});
+    $("#container-display").slideUp(500, function(){
+        reset();
+        dictionary = getTagalogManners();
+        phrase = setPhraseArr();
+        setModuleTitle(getTitleManners());
+        setCardValues();
+        $("#choose-mod-div").html("<h3 id='choose-mod'>Modules:</h3>");
+    });
+    $("#container-display").slideDown(500);
 })
 
-document.querySelector("#home").addEventListener("click", function(){
-    window.location = "../../index.html";
+$("#home").on("click", function(){
+    $("#container-display").fadeOut(500);
+    $("#mod-fade").fadeOut(500, function(){
+        window.location = "../../index.html";
+    });
 })
+
+$("#mod-fade").fadeIn(1000);
