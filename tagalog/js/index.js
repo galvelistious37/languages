@@ -5,5 +5,9 @@ document.querySelector("#spanish-lang").addEventListener("click", function(){
 })
 
 document.querySelector("#tagalog-lang").addEventListener("click", function(){
-    window.location = "./tagalog/html/modules.html";
+    $("#language-display").fadeOut(500, function(){
+        window.location = "./tagalog/html/modules.html";
+    });
 })
+
+$("#language-display").fadeIn(1000);
