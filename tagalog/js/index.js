@@ -1,10 +1,9 @@
 
-
-document.querySelector("#spanish-lang").addEventListener("click", function(){
+$("#spanish-lang").on("click", function(){
     alert("Spanish has not been setup yet... go to Tagalog, lol");
 })
 
-document.querySelector("#tagalog-lang").addEventListener("click", function(){
+$("#tagalog-lang").click(function(){
     $("#language-display").fadeOut(500, function(){
         window.location = "./tagalog/html/modules.html";
     });
